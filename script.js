@@ -29,12 +29,16 @@ const fetchPokemon = async (query) => {
         image.src = data.sprites.other['official-artwork'].front_default;
 
         const title = document.createElement("h3");
-        title.textContent = data.name;
+        title.textContent = data.name.toUpperCase();
 
         const number  = document.createElement("p");
-        number.textContent = data.id;
+        number.textContent = "ID NUMBER: " + data.id;
 
-        pokemonDiv.append(image, title, number);
+        const types = document.createElement("p");
+        const rawtypes = data.types.map(t => t.type.name);
+        types.textContent = rawtypes.join(', ').toUpperCase();
+
+        pokemonDiv.append(image, title, number, types);
         pokemonContainer.appendChild(pokemonDiv);
     } catch (error) {
         showMessage(`Error: ${error.message}`);
