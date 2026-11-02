@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #AEC4D4;
+    color: #4C4541;
+}
+
+header nav{
+    background-color: #790D16;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+header nav h1{
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header nav form{
+    display: flex;
+    justify-content: center;
+}
+
+form input[type = "text"]{
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+form input[type = "text"],
+button[type="submit"]{
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+form button[type="submit"]{
+    background-color: #E5D3AF;
+    color: #4C4541;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover{
+    background-color: #F2C46A;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-container {
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-gap: 40px;
+}
+
+.pokemon img {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    header nav{
+        flex-direction: column;
+    }
+    header nav form {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
